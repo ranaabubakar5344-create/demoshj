@@ -18,8 +18,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full relative z-50">
-
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white">
       {/* ================= MOBILE TOP BAR (PHONE + EMAIL ONLY) ================= */}
       <div className="lg:hidden bg-[#861F20]">
         <div className="flex items-center justify-center gap-6 py-2 text-[11px] text-white">

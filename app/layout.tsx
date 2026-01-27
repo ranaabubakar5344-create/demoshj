@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased pt-[108px] lg:pt-[128px]`}>
         <Header />
         <WhatsAppFloat />
         {children}
