@@ -3,50 +3,58 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { useState } from "react";
+
+/* Helper: Get initials */
+const getInitials = (name: string) => {
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+};
 
 export default function Testimonials() {
   const testimonials = [
     {
       name: "Ayesha Khan",
       programme: "Academic English",
-      image: "/hero.png",
-      quote:
-        "The learning environment was supportive and well-structured. The course helped me improve my academic confidence and prepare for further studies.",
-    },
-    {
-      name: "Ahmed Raza",
-      programme: "Computing Fundamentals",
-      image: "/hero.png",
-      quote:
-        "The programme was practical and easy to follow. The guidance from instructors helped me build strong foundational skills.",
-    },
-    {
-      name: "Sara Malik",
-      programme: "Psychology",
-      image: "/hero.png",
-      quote:
-        "The course content was clear and engaging. It gave me clarity about my academic direction and future learning pathway.",
-    },
-    {
-      name: "Rana Abubakar",
-      programme: "Psychology",
-      image: "/hero.png",
-      quote:
-        "The course content was clear and engaging. It gave me clarity about my academic direction and future learning pathway.",
-    },
-    {
-      name: "Sara Malik",
-      programme: "Psychology",
-      image: "/hero1.png",
-      quote:
-        "The course content was clear and engaging. It gave me clarity about my academic direction and future learning pathway.",
-    },
-    {
-      name: "Sara Malik",
-      programme: "Psychology",
       image: "/r1.png",
       quote:
-        "The course content was clear and engaging. It gave me clarity about my academic direction and future learning pathway.",
+        "The Academic English programme helped me improve my writing and presentation skills. The structured lessons gave me confidence for further studies.",
+    },
+    {
+      name: "Ahmed Al Mansoori",
+      programme: "Cyber Security",
+      image: "unnamed.jpg",
+      quote:
+        "The cyber security course provided strong foundational knowledge and practical exposure. The hands-on sessions made complex topics easy to understand.",
+    },
+    {
+      name: "Sara Malik",
+      programme: "Psychology",
+      image: "/png-girl.webp",
+      quote:
+        "The psychology programme was engaging and thoughtfully delivered. It helped me better understand human behaviour and academic research methods.",
+    },
+    {
+      name: "Michael Joseph",
+      programme: "Business Management",
+      image: "", // ❌ no image
+      quote:
+        "The business management course was well-structured and practical. It improved my understanding of leadership, strategy, and organizational skills.",
+    },
+    {
+      name: "Maryam Hassan",
+      programme: "Computing Fundamentals",
+      image: "/r1.png",
+      quote:
+        "The computing programme helped me build confidence in IT basics. The instructors explained concepts clearly and supported us throughout the course.",
+    },
+    {
+      name: "Daniel Thomas",
+      programme: "Academic English",
+      image: "", // ❌ no image
+      quote:
+        "The learning environment was professional and welcoming. This course significantly improved my academic communication and writing skills.",
     },
   ];
 
@@ -68,7 +76,7 @@ export default function Testimonials() {
         <div className="perspective-[1200px]">
           <Swiper
             modules={[Autoplay]}
-            slidesPerView={1.2}
+            slidesPerView={1}
             centeredSlides
             loop
             spaceBetween={40}
@@ -76,7 +84,6 @@ export default function Testimonials() {
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
-              pauseOnMouseEnter: false,
             }}
             breakpoints={{
               768: { slidesPerView: 2.2 },
@@ -91,29 +98,54 @@ export default function Testimonials() {
                       transition-all duration-500 ease-out
                       ${
                         isActive
-                          ? "scale-100 opacity-100 translate-y-[-14px]shadow-[0_20px_40px_rgba(0,0,0,0.15)] z-20"
-                          : "scale-95 opacity-75 blur-[1px] shadow-sm z-10"
+                          ? "opacity-100 -translate-y-3 z-20"
+                          : "opacity-75 blur-[1px] z-10"
                       }
                     `}
+                    style={{
+                      transformStyle: "preserve-3d",
+                      willChange: "transform",
+                      transform: isActive
+                        ? "translateZ(60px) translateY(-12px) scale(1.02)"
+                        : "translateZ(0px) translateY(0px) scale(0.95)",
+                    }}
                   >
                     {/* CARD */}
-                    <div className="bg-white rounded-xl border border-black/10 p-8">
-                      
-                      {/* TEXT */}
-                      <p className="text-sm text-black/70 leading-relaxed">
+                    <div className="bg-white rounded-xl border border-black/10 p-8 text-center sm:text-left">
+
+                      {/* QUOTE */}
+                      <p className="text-sm text-black/70 leading-relaxed text-center sm:text-left">
                         {t.quote}
                       </p>
 
-                      {/* DIVIDER */}
                       <div className="my-6 h-px bg-black/10" />
 
                       {/* AUTHOR */}
-                      <div className="flex items-center gap-4">
-                        <img
-                          src={t.image}
-                          alt={t.name}
-                          className="w-10 h-10 rounded-full object-cover"
-                        />
+                      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left justify-center sm:justify-start">
+
+                        {/* AVATAR */}
+                        {t.image ? (
+                          <img
+                            src={t.image}
+                            alt={t.name}
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
+                        ) : (
+                          <div
+                            className="
+                              w-10 h-10
+                              rounded-full
+                              bg-[#861F20]/10
+                              flex items-center justify-center
+                              text-[#861F20]
+                              text-sm font-semibold
+                            "
+                          >
+                            {getInitials(t.name)}
+                          </div>
+                        )}
+
+                        {/* NAME */}
                         <div>
                           <p className="text-sm font-semibold text-[#861F20]">
                             {t.name}
@@ -122,8 +154,8 @@ export default function Testimonials() {
                             {t.programme}
                           </p>
                         </div>
-                      </div>
 
+                      </div>
                     </div>
                   </div>
                 )}

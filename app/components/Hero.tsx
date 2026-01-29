@@ -1,151 +1,177 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
-export default function Hero() {
+const slides = [
+  {
+    tag: "Al Mustaqbal Al Bahir Training Center",
+    title: "Innovative Learning in",
+    highlight: "Computing",
+    desc: "Develop future-ready computing skills including software development, IT systems, and emerging technologies.",
+    image: "/c.jpg",
+  },
+  {
+    tag: "School of Cyber Security",
+    title: "Secure the Digital World with",
+    highlight: "Cyber Security",
+    desc: "Master ethical hacking, cyber defence, network security, and real-world risk management practices.",
+    image: "/cree.jpg",
+  },
+  {
+    tag: "School of Psychology",
+    title: "Understanding Human Behaviour through",
+    highlight: "Psychology",
+    desc: "Study mental processes, emotional intelligence, and applied psychology for professional impact.",
+    image: "/phy.jpg",
+  },
+  {
+    tag: "School of Business",
+    title: "Leadership & Strategy in",
+    highlight: "Business Management",
+    desc: "Build strong foundations in management, entrepreneurship, marketing, and organizational leadership.",
+    image: "/bm.jpg",
+  },
+];
+
+export default function HeroSlider() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 6500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const slide = slides[index];
+
   return (
-    <section className="relative overflow-hidden bg-[#FFFDF8]">
+    <section className="relative overflow-hidden bg-[#FBF7F2]">
+      {/* ===== Decorative Blurred Background Shapes ===== */}
+      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#861F20]/10 blur-[120px]" />
+      <div className="absolute top-1/3 -right-40 h-[450px] w-[450px] rounded-full bg-[#E5CA77]/20 blur-[140px]" />
 
-      {/* ===== BACKGROUND ===== */}
-      <motion.div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(229,202,119,0.12),transparent_45%)]"
-        animate={{ opacity: [0.6, 0.9, 0.6] }}
-        transition={{ duration: 14, repeat: Infinity }}
-      />
+      <div className="relative max-w-7xl mx-auto px-5 pt-24 pb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 py-20 sm:py-28">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-
-          {/* ================= LEFT ================= */}
+        {/* ================= IMAGE ================= */}
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            key={slide.image}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.92 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex justify-center lg:order-2"
+          >
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              className="
+                relative
+                w-[240px] h-[240px]
+                sm:w-[280px] sm:h-[280px]
+                lg:w-[400px] lg:h-[400px]
+                rounded-full
+                bg-gradient-to-br from-[#861F20] to-[#5f1516]
+                p-5
+                shadow-[0_30px_80px_rgba(0,0,0,0.25)]
+              "
+            >
+              {/* rotating ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+                className="absolute inset-0 rounded-full border border-[#E5CA77]/40"
+              />
+
+              <Image
+                src={slide.image}
+                alt={slide.highlight}
+                fill
+                className="object-cover rounded-full"
+                priority
+              />
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* ================= CONTENT ================= */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center lg:text-left"
           >
-            <span className="inline-block mb-5 rounded-full bg-[#861F20]/10 px-5 py-1.5 text-[10px] font-semibold tracking-widest text-[#861F20]">
-              BRIGHT FUTURE TRAINING CENTER
+            <span className="inline-block mb-4 rounded-full bg-white/70 backdrop-blur px-4 py-1 text-xs sm:text-sm font-medium text-[#861F20] shadow">
+              {slide.tag}
             </span>
 
-            <h1 className="text-[34px] sm:text-[42px] lg:text-[56px] leading-[1.15] font-extrabold text-black">
-              Practical Skills for
-              <span className="block text-[#861F20]">
-                Professional Careers
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-black">
+              {slide.title}{" "}
+              <span className="text-[#861F20]">
+                {slide.highlight}
               </span>
             </h1>
 
-            <p className="mt-5 max-w-xl mx-auto lg:mx-0 text-[15px] leading-relaxed text-black/65">
-              Certified training programmes designed to equip students and
-              professionals with industry-relevant skills.
+            <p className="mt-4 max-w-xl mx-auto lg:mx-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+              {slide.desc}
             </p>
 
-            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                href="/courses"
-                className="rounded-full bg-[#861F20] px-9 py-3 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(134,31,32,0.35)]"
+                href="/shortcourses"
+                className="
+                  rounded-full
+                  bg-gradient-to-r from-[#861F20] to-[#74191A]
+                  px-7 py-3
+                  text-white
+                  text-sm sm:text-base
+                  font-semibold
+                  shadow-lg
+                  hover:shadow-[0_12px_40px_rgba(134,31,32,0.4)]
+                  transition-all
+                "
               >
                 Explore Programmes →
               </Link>
 
               <Link
                 href="/about"
-                className="text-sm font-semibold text-[#861F20] underline-offset-4 hover:underline"
+                className="
+                  px-6 py-3
+                  text-sm sm:text-base
+                  font-medium
+                  text-[#861F20]
+                  hover:underline
+                "
               >
                 Learn More
               </Link>
             </div>
-
-            <div className="mt-10 mx-auto lg:mx-0 h-px w-24 bg-[#E5CA77]/70" />
-
-            {/* <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-3 text-sm text-black/60">
-              <span>✔ KHDA Approved</span>
-              <span>✔ Expert Faculty</span>
-              <span>✔ Career Focused</span>
-            </div> */}
           </motion.div>
+        </AnimatePresence>
+      </div>
 
-        {/* ================= RIGHT IMAGE ================= */}
-<motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 1 }}
-  className="relative flex justify-center"
->
-  <div className="
-    relative
-    w-[280px] h-[280px]
-    sm:w-[360px] sm:h-[360px]
-    lg:w-[500px] lg:h-[500px]
-  ">
-
-    {/* ROTATING OUTER ORBIT */}
-    <motion.div
-      className="absolute inset-0 rounded-full"
-      style={{
-        background:
-          "conic-gradient(from 0deg, #820404, transparent, #790817)",
-      }}
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: 26,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-    >
-      <div className="absolute inset-[3px] rounded-full bg-[#FFFDF8]" />
-    </motion.div>
-
-    {/* PULSING MID ORBIT */}
-    <motion.div
-      className="absolute inset-6 sm:inset-10 rounded-full border-4 border-[#E5CA77]/30"
-      animate={{
-        scale: [1, 1.05, 1],
-        opacity: [0.3, 0.6, 0.3],
-      }}
-      transition={{ duration: 3, repeat: Infinity }}
-    />
-
-    {/* CORE */}
-    <motion.div
-      className="absolute inset-10 sm:inset-14 rounded-full bg-gradient-to-br from-[#861F20] via-[#9B2325] to-[#6D1819]"
-      animate={{ rotate: -360 }}
-      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-    />
-
-    {/* IMAGE */}
-    <div className="absolute inset-14 sm:inset-20 rounded-full overflow-hidden shadow-[0_40px_90px_rgba(0,0,0,0.35)]">
-      <img
-        src="/hero2.png"
-        alt="Professional Training"
-        className="w-full h-full object-cover scale-110"
-      />
-    </div>
-
-    {/* FLOATING ORBIT DOTS */}
-    {[...Array(8)].map((_, i) => (
-      <motion.div
-        key={i}
-        className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-br from-[#E5CA77] to-[#D4B962] rounded-full shadow-lg"
-        style={{
-          left: `${50 + 46 * Math.cos((i * Math.PI * 2) / 8)}%`,
-          top: `${50 + 46 * Math.sin((i * Math.PI * 2) / 8)}%`,
-        }}
-        animate={{
-          y: [0, -16, 0],
-          opacity: [0.5, 1, 0.5],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          delay: i * 0.15,
-        }}
-      />
-    ))}
-  </div>
-</motion.div>
-
-        </div>
+      {/* ================= DOTS ================= */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`
+              h-2.5 w-2.5 rounded-full transition-all
+              ${index === i
+                ? "bg-[#861F20] scale-125"
+                : "bg-[#861F20]/30 hover:bg-[#861F20]/50"}
+            `}
+          />
+        ))}
       </div>
     </section>
   );

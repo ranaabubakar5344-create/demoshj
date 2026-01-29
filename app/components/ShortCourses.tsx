@@ -1,3 +1,4 @@
+import Link from "next/link";
 const categories = [
   {
     title: "General",
@@ -76,10 +77,10 @@ export default function ShortCourses() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-semibold text-[#861F20] text-center">
+        <h2 className="text-4xl font-bold text-[#861F20] text-center">
           Our Short Courses
         </h2>
-        <p className="text-black/60 text-center mt-3">
+        <p className="text-black text-center mt-3">
           Building a Bright Future Through Practical Learning
         </p>
 
@@ -126,15 +127,18 @@ export default function ShortCourses() {
 
     <div className="w-10 h-[2px] bg-[#E5CA77] mt-2 mb-4" />
 
-    <ul className="space-y-2 text-sm text-black/70 leading-relaxed">
+    <ul className="space-y-2 text-sm text-blac leading-relaxed">
       {cat.courses.slice(0, 4).map((course, idx) => (
         <li key={idx}>• {course}</li>
       ))}
     </ul>
 
-    <div className="mt-6 text-sm font-medium text-[#861F20]">
-      View Courses →
-    </div>
+    <Link
+  href="/shortcourses"
+  className="mt-6 inline-block text-sm font-medium text-[#861F20] hover:underline"
+>
+  View Courses →
+</Link>
   </div>
 </div>
           ))}
