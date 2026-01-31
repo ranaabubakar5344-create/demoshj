@@ -238,7 +238,7 @@ export default function Header() {
           className={`lg:hidden transition-all duration-300 overflow-hidden
           ${open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}
         >
-<div className="w-full bg-white border-t border-gray-200 text-gray-900">
+<div className="w-full bg-white border-t border-gray-200 text-black">
             <div className="px-6 py-6 space-y-6">
               {/* Mobile Navigation Links */}
               <nav className="space-y-4">
@@ -253,7 +253,7 @@ export default function Header() {
                       ${
                        active
   ? "bg-[#810204] text-white"
-  : "text-gray-700 hover:bg-gray-100 hover:text-[#810204]"
+  : "text-black hover:bg-gray-100 hover:text-[#810204]"
 
                       }`}
                     >
@@ -291,7 +291,7 @@ hover:bg-[#a11310] hover:shadow-xl transition-all"
 
               {/* Mobile Social Links */}
               <div className="pt-4 border-t border-gray-300">
-                <p className="text-xs text-gray-700 font-medium mb-3">Follow Us</p>
+                <p className="text-xs text-black font-medium mb-3">Follow Us</p>
                 <div className="flex gap-3">
                   {SOCIAL_LINKS.map(({ Icon, href, label }) => (
                     <Link
@@ -317,14 +317,14 @@ transition-all duration-300 shadow-md"
               <div className="pt-4 border-t border-gray-300 space-y-3 text-sm">
                 <a 
                   href="admissions@futureeducation.ae"
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#810204] transition"
+                  className="flex items-center gap-3 text-black hover:text-[#810204] transition"
                 >
                   <Mail size={18} />
                   <span>admissions@futureeducation.ae</span>
                 </a>
                 <a 
                   href="tel:+97165611886"
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#810204] transition"
+                  className="flex items-center gap-3 text-black hover:text-[#810204] transition"
                 >
                   <Phone size={18} />
                   <span>+971 6 561 1886</span>
