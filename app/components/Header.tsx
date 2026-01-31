@@ -127,7 +127,7 @@ export default function Header() {
                     <div className="h-7 w-7 rounded-full bg-white/15 grid place-items-center">
                       <Clock size={13} strokeWidth={2} />
                     </div>
-                    <span className="font-medium">Sun - Thu: 8AM - 8PM</span>
+                    <span className="font-medium">Mon - Sat: 9AM - 5PM</span>
                   </div>
                 </div>
               </div>
@@ -238,7 +238,7 @@ export default function Header() {
           className={`lg:hidden transition-all duration-300 overflow-hidden
           ${open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}
         >
-<div className="bg-[#810204] border-t border-white/20 text-white">
+<div className="w-full bg-white border-t border-gray-200 text-gray-900">
             <div className="px-6 py-6 space-y-6">
               {/* Mobile Navigation Links */}
               <nav className="space-y-4">
@@ -252,8 +252,8 @@ export default function Header() {
                       transition-all duration-300
                       ${
                        active
-  ? "bg-white text-[#810204]"
-  : "text-white/90 hover:bg-white/10 hover:text-white"
+  ? "bg-[#810204] text-white"
+  : "text-gray-700 hover:bg-gray-100 hover:text-[#810204]"
 
                       }`}
                     >
@@ -264,14 +264,14 @@ export default function Header() {
               </nav>
 
               {/* Mobile CTA Buttons */}
-              <div className="space-y-3 pt-4 border-t border-gray-200">
+              <div className="space-y-3 pt-4 border-t border-gray-300">
                 <Link
                   href="https://lms.futureeducation.ae/login/index.php"
                   target="_blank"
                   rel="noopener noreferrer"
                  className="block w-full px-5 py-3 text-sm font-semibold text-center
-border-2 border-white text-white rounded-lg
-hover:bg-white hover:text-[#810204] transition-all"
+border-2 border-[#810204] text-[#810204] rounded-lg
+hover:bg-[#810204] hover:text-white transition-all"
 
                 >
                   Study Portal
@@ -280,9 +280,9 @@ hover:bg-white hover:text-[#810204] transition-all"
                 <Link
                   href="/apply"
                  className="block w-full px-6 py-3 text-sm font-bold text-center
-bg-white text-[#810204]
+bg-[#810204] text-white
 rounded-lg shadow-lg
-hover:bg-gray-100 hover:shadow-xl transition-all"
+hover:bg-[#a11310] hover:shadow-xl transition-all"
 
                 >
                  Admissions Enquiry
@@ -290,8 +290,8 @@ hover:bg-gray-100 hover:shadow-xl transition-all"
               </div>
 
               {/* Mobile Social Links */}
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-xs text-white font-medium mb-3">Follow Us</p>
+              <div className="pt-4 border-t border-gray-300">
+                <p className="text-xs text-gray-700 font-medium mb-3">Follow Us</p>
                 <div className="flex gap-3">
                   {SOCIAL_LINKS.map(({ Icon, href, label }) => (
                     <Link
@@ -301,9 +301,9 @@ hover:bg-gray-100 hover:shadow-xl transition-all"
                       rel="noopener noreferrer"
                       aria-label={label}
 className="h-10 w-10 grid place-items-center rounded-full
-bg-white text-[#810204]
-hover:bg-gray-100 hover:scale-110
-transition-all duration-300 shadow-lg"
+bg-[#810204] text-white
+hover:bg-[#a11310] hover:scale-110
+transition-all duration-300 shadow-md"
 
 
                     >
@@ -314,17 +314,17 @@ transition-all duration-300 shadow-lg"
               </div>
 
               {/* Mobile Contact Info */}
-              <div className="pt-4 border-t border-gray-200 space-y-3 text-sm">
+              <div className="pt-4 border-t border-gray-300 space-y-3 text-sm">
                 <a 
                   href="admissions@futureeducation.ae"
-                  className="flex items-center gap-3 text-white hover:text-[#8B1538] transition"
+                  className="flex items-center gap-3 text-gray-700 hover:text-[#810204] transition"
                 >
                   <Mail size={18} />
                   <span>admissions@futureeducation.ae</span>
                 </a>
                 <a 
                   href="tel:+97165611886"
-                  className="flex items-center gap-3 text-white hover:text-[#8B1538] transition"
+                  className="flex items-center gap-3 text-gray-700 hover:text-[#810204] transition"
                 >
                   <Phone size={18} />
                   <span>+971 6 561 1886</span>
