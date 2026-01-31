@@ -1,5 +1,13 @@
+export const metadata = {
+  title: "About Us | Al Mustaqbal Al Bahir Training Center",
+  description:
+    "Learn more about Al Mustaqbal Al Bahir Training Center, our mission, academic vision, and commitment to delivering career-focused education and professional development in the UAE.",
+};
+
 export default function AboutUs() {
+  
   return (
+    
     <section className="bg-[#FAF7F5]">
 
       {/* HERO INTRO */}

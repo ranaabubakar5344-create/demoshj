@@ -18,6 +18,7 @@ type CourseCategory = {
   courses: ShortCourse[];
 };
 
+
 /* ================= DATA ================= */
 
 const courseCategories: CourseCategory[] = [
@@ -73,7 +74,7 @@ const courseCategories: CourseCategory[] = [
       { title: "Statistics for Managers", image: "/buisn.jpg", href: "#", duration: "Short Course" },
       { title: "Economics for Decision Making", image: "/eco.jpg", href: "#", duration: "Short Course" },
       { title: "Enterprise Design Thinking", image: "/enter.jpg", href: "#", duration: "Short Course" },
-      { title: "Organisation Behaviour: Theory and Practice", image: "/df.jpg", href: "#", duration: "Short Course" },
+      { title: "Organisation Behaviour", image: "/df.jpg", href: "#", duration: "Short Course" },
     ]
   },
    {
@@ -84,7 +85,7 @@ const courseCategories: CourseCategory[] = [
       { title: "Statistics for Managers", image: "/buisn.jpg", href: "#", duration: "Short Course" },
       { title: "Economics for Decision Making", image: "/eco.jpg", href: "#", duration: "Short Course" },
       { title: "Cost and Management Accounting", image: "/cos.jpg", href: "#", duration: "Short Course" },
-      { title: "Organisation Behaviour: Theory and Practice", image: "/df.jpg", href: "#", duration: "Short Course" },
+      { title: "Organisation Behaviour", image: "/df.jpg", href: "#", duration: "Short Course" },
     ]
   },
 ];

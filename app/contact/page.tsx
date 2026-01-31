@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactPage() {
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {

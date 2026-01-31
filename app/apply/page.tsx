@@ -10,6 +10,7 @@ export default function StartYourJourney() {
     e.preventDefault();
     setSubmitted(true);
   };
+  
 
   return (
     <main className="min-h-screen bg-[#FAF7F5]">
