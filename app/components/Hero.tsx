@@ -14,21 +14,21 @@ const slides = [
     image: "/c.jpg",
   },
   {
-    tag: "School of Cyber Security",
+    tag: "Cyber Security",
     title: "Secure the Digital World with",
     highlight: "Cyber Security",
     desc: "Master ethical hacking, cyber defence, network security, and real-world risk management practices.",
     image: "/cree.jpg",
   },
   {
-    tag: "School of Psychology",
+    tag: "Psychology",
     title: "Understanding Human Behaviour through",
     highlight: "Psychology",
     desc: "Study mental processes, emotional intelligence, and applied psychology for professional impact.",
     image: "/phy.jpg",
   },
   {
-    tag: "School of Business",
+    tag: "Business",
     title: "Leadership & Strategy in",
     highlight: "Business Management",
     desc: "Build strong foundations in management, entrepreneurship, marketing, and organizational leadership.",
@@ -108,13 +108,13 @@ export default function HeroSlider() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center lg:text-left"
           >
-            <span className="inline-block mb-4 rounded-full bg-white/70 backdrop-blur px-4 py-1 text-xs sm:text-sm font-medium text-[#861F20] shadow">
+            <span className="inline-block mb-4 rounded-full bg-white/70 backdrop-blur px-4 py-1 text-xs sm:text-sm font-medium text-[#810204] shadow">
               {slide.tag}
             </span>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-black">
               {slide.title}{" "}
-              <span className="text-[#861F20]">
+              <span className="text-[#810204]">
                 {slide.highlight}
               </span>
             </h1>
@@ -128,7 +128,7 @@ export default function HeroSlider() {
                 href="/shortcourses"
                 className="
                   rounded-full
-                  bg-gradient-to-r from-[#861F20] to-[#74191A]
+                  bg-gradient-to-r from-[#810204] to-[#74191A]
                   px-7 py-3
                   text-white
                   text-sm sm:text-base
@@ -138,7 +138,7 @@ export default function HeroSlider() {
                   transition-all
                 "
               >
-                Explore Programmes →
+                Explore Courses 
               </Link>
 
               <Link
@@ -147,7 +147,7 @@ export default function HeroSlider() {
                   px-6 py-3
                   text-sm sm:text-base
                   font-medium
-                  text-[#861F20]
+                  text-[#810204]
                   hover:underline
                 "
               >
@@ -167,8 +167,8 @@ export default function HeroSlider() {
             className={`
               h-2.5 w-2.5 rounded-full transition-all
               ${index === i
-                ? "bg-[#861F20] scale-125"
-                : "bg-[#861F20]/30 hover:bg-[#861F20]/50"}
+                ? "bg-[#810204] scale-125"
+                : "bg-[#810204]/30 hover:bg-[#861F20]/50"}
             `}
           />
         ))}

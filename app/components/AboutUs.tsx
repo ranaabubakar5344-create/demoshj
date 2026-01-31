@@ -24,11 +24,11 @@ export default function AboutUs() {
           {/* RIGHT CONTENT */}
           <div>
             {/* Eyebrow */}
-            <span className="inline-block text-xs tracking-widest uppercase text-[#E5CA77] font-medium">
+            <span className="inline-block text-s tracking-widest uppercase text-[#E5CA77] font-medium">
               About Our Institution
             </span>
 
-            <h2 className="mt-4 text-5xl font-semibold text-[#861F20] leading-tight">
+            <h2 className="mt-4 text-5xl font-bold text-[#810204] leading-tight">
               Shaping Academic Confidence & Professional Growth
             </h2>
 
@@ -58,7 +58,7 @@ export default function AboutUs() {
 <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-xl">
 {/* BOX 1 */}
 <div className="bg-white rounded-xl border border-black/10 p-6 text-center shadow-sm">
-<p className="text-4xl font-semibold text-[#861F20]">
+<p className="text-4xl font-semibold text-[#810204]">
 <CountUp end={10} suffix="+" />
 </p>
 <p className="mt-2 text-sm text-black/60">
@@ -69,7 +69,7 @@ Years Experience
 
 {/* BOX 2 */}
 <div className="bg-white rounded-xl border border-black/10 p-6 text-center shadow-sm">
-<p className="text-4xl font-semibold text-[#861F20]">
+<p className="text-4xl font-semibold text-[#810204]">
 <CountUp end={3000} suffix="+" />
 </p>
 <p className="mt-2 text-sm text-black/60">
@@ -80,7 +80,7 @@ Students Supported
 
 {/* BOX 3 */}
 <div className="bg-white rounded-xl border border-black/10 p-6 text-center shadow-sm">
-<p className="text-4xl font-semibold text-[#861F20]">
+<p className="text-4xl font-semibold text-[#810204]">
 <CountUp end={40} suffix="+" />
 </p>
 <p className="mt-2 text-sm text-black/60">

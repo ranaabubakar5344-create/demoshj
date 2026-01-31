@@ -19,7 +19,7 @@ export default function Testimonials() {
       programme: "Academic English",
       image: "/r1.png",
       quote:
-        "The Academic English programme helped me improve my writing and presentation skills. The structured lessons gave me confidence for further studies.",
+        "The Academic English  Course helped me improve my writing and presentation skills. The structured lessons gave me confidence for further studies.",
     },
     {
       name: "Ahmed Al Mansoori",
@@ -33,7 +33,7 @@ export default function Testimonials() {
       programme: "Psychology",
       image: "/png-girl.webp",
       quote:
-        "The psychology programme was engaging and thoughtfully delivered. It helped me better understand human behaviour and academic research methods.",
+        "The psychology  course was engaging and thoughtfully delivered. It helped me better understand human behaviour and academic research methods.",
     },
     {
       name: "Michael Joseph",
@@ -47,7 +47,7 @@ export default function Testimonials() {
       programme: "Computing Fundamentals",
       image: "/r1.png",
       quote:
-        "The computing programme helped me build confidence in IT basics. The instructors explained concepts clearly and supported us throughout the course.",
+        "The computing short course helped me build confidence in IT basics. The instructors explained concepts clearly and supported us throughout the course.",
     },
     {
       name: "Daniel Thomas",
@@ -64,7 +64,7 @@ export default function Testimonials() {
 
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <h2 className="text-4xl font-bold text-[#861F20]">
+          <h2 className="text-4xl font-bold text-[#810204]">
             Student Experiences
           </h2>
           <p className="mt-4 text-black/60">
@@ -137,7 +137,7 @@ export default function Testimonials() {
                               rounded-full
                               bg-[#861F20]/10
                               flex items-center justify-center
-                              text-[#861F20]
+                              text-[#810204]
                               text-sm font-semibold
                             "
                           >
@@ -147,7 +147,7 @@ export default function Testimonials() {
 
                         {/* NAME */}
                         <div>
-                          <p className="text-sm font-semibold text-[#861F20]">
+                          <p className="text-sm font-semibold text-[#810204]">
                             {t.name}
                           </p>
                           <p className="text-xs text-black/55">

@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="bg-[#861F20] text-white">
+    <footer className="bg-[#810204] text-white">
       <div className="max-w-7xl mx-auto px-6 py-20">
 
         {/* TOP */}
@@ -31,7 +31,7 @@ export default function Footer() {
           {/* PROGRAMMES */}
           <div>
             <h4 className="text-sm font-semibold text-[#E5CA77]">
-              Programmes
+              Courses
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-white">
               <li>
@@ -95,11 +95,11 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-white">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 text-[#E5CA77]" />
-                <span>Sharjah, United Arab Emirates</span>
+                <span>Sahara Center Sharjah,UAE</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-[#E5CA77]" />
-                <span>+971 6561 188</span>
+                <span>+971 6561 1886</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-[#E5CA77]" />

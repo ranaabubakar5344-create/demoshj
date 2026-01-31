@@ -60,6 +60,18 @@ const categories = [
       "Organisation Behaviour",
     ],
   },
+
+   {
+    title: "BM Accounting",
+    image: "/buisn.jpg",
+    courses: [
+      "Understanding the Business Environment",
+      "Financial Accounting for Business Enterprise",
+      "Statistics for Managers",
+      "Cost and Management Accounting",
+      "Organisation Behaviour",
+    ],
+  },
 ];
 
 export default function ShortCourses() {
@@ -77,7 +89,7 @@ export default function ShortCourses() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-[#861F20] text-center">
+        <h2 className="text-4xl font-bold text-[#810204] text-center">
           Our Short Courses
         </h2>
         <p className="text-black text-center mt-3">
@@ -94,7 +106,7 @@ export default function ShortCourses() {
     overflow-hidden
     transition-all duration-300
     hover:-translate-y-1
-    hover:border-[#861F20]
+    hover:border-[#810204]
   "
 >
   {/* BOTTOM GLOW */}
@@ -121,7 +133,7 @@ export default function ShortCourses() {
 </div>
   {/* CONTENT */}
   <div className="p-7 relative z-10">
-    <h3 className="text-lg font-semibold text-[#861F20]">
+    <h3 className="text-lg font-semibold text-[#810204]">
       {cat.title}
     </h3>
 
@@ -135,7 +147,7 @@ export default function ShortCourses() {
 
     <Link
   href="/shortcourses"
-  className="mt-6 inline-block text-sm font-medium text-[#861F20] hover:underline"
+  className="mt-6 inline-block text-sm font-medium text-[#810204] hover:underline"
 >
   View Courses →
 </Link>

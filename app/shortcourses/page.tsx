@@ -73,7 +73,18 @@ const courseCategories: CourseCategory[] = [
       { title: "Statistics for Managers", image: "/buisn.jpg", href: "#", duration: "Short Course" },
       { title: "Economics for Decision Making", image: "/eco.jpg", href: "#", duration: "Short Course" },
       { title: "Enterprise Design Thinking", image: "/enter.jpg", href: "#", duration: "Short Course" },
-      { title: "Organisational Behaviour", image: "/df.jpg", href: "#", duration: "Short Course" },
+      { title: "Organisation Behaviour: Theory and Practice", image: "/df.jpg", href: "#", duration: "Short Course" },
+    ]
+  },
+   {
+    heading: "Business Management Accounting",
+    courses: [
+      { title: "Understanding the Business Environment", image: "/buis.jpg", href: "#", duration: "Short Course" },
+      { title: "Financial Accounting for Business Enterprise", image: "/per.jpg", href: "#", duration: "Short Course" },
+      { title: "Statistics for Managers", image: "/buisn.jpg", href: "#", duration: "Short Course" },
+      { title: "Economics for Decision Making", image: "/eco.jpg", href: "#", duration: "Short Course" },
+      { title: "Cost and Management Accounting", image: "/cos.jpg", href: "#", duration: "Short Course" },
+      { title: "Organisation Behaviour: Theory and Practice", image: "/df.jpg", href: "#", duration: "Short Course" },
     ]
   },
 ];
@@ -109,7 +120,7 @@ export default function ShortCoursesSection() {
 
       {/* PAGE HEADER */}
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#861F20]">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#810204]">
           Short Courses
         </h1>
         <p className="mt-4 text-black text-lg">
@@ -124,7 +135,7 @@ export default function ShortCoursesSection() {
 
           {/* CATEGORY HEADING */}
           <div className="max-w-7xl mx-auto px-6 mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#861F20]">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#810204]">
               {category.heading}
             </h2>
             <div className="mt-3 h-1 w-24 bg-[#E5CA77] rounded-full" />
@@ -207,7 +218,7 @@ export default function ShortCoursesSection() {
     className="
       mt-6 block text-center
       rounded-xl py-3
-      bg-[#861F20] text-white
+      bg-[#810204] text-white
       font-semibold
       tracking-wide
       hover:bg-[#6E1718]

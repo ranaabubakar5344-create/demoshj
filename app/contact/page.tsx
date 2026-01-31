@@ -33,7 +33,7 @@ export default function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-          <div className="bg-[#861F20] rounded-xl p-7 text-white">
+          <div className="bg-[#810204] rounded-xl p-7 text-white">
             <Phone size={24} className="mb-5 opacity-90" />
             <h3 className="text-lg font-semibold mb-1">Call Us</h3>
             <p className="text-sm text-white mb-3">
@@ -44,8 +44,8 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="bg-[#861F20] rounded-xl p-7 text-white">
-            <Mail size={24} className="mb-5 opacity-90" />
+          <div className="bg-[#810204] rounded-xl p-7 text-white">
+            <Mail size={24} className="mb-5  " />
             <h3 className="text-lg font-semibold mb-1">Email Us</h3>
             <p className="text-sm text-white mb-3">
               We usually respond within 24 hours

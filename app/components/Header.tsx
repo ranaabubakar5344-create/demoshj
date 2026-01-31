@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* ================= MOBILE TOP BAR ================= */}
-      <div className="lg:hidden bg-[#861F20]">
+      <div className="lg:hidden bg-[#810204]">
         <div className="flex items-center justify-center gap-6 py-2 text-[11px] text-white">
           <a href="tel:+97165611886" className="flex items-center gap-1">
             <Phone size={12} /> +971 6 561 1886
@@ -141,11 +141,11 @@ export default function Header() {
 
               <Link
                 href="/apply"
-                className="rounded-full bg-gradient-to-r from-[#861F20] to-[#74191A]
+                className="rounded-full bg-[#810204]
                 px-6 py-2 text-sm font-semibold text-white
                 hover:shadow-[0_8px_25px_rgba(134,31,32,0.35)] transition"
               >
-                Apply Online
+                Admissions Enquiry
               </Link>
             </div>
 
